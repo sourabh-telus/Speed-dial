@@ -9,7 +9,7 @@
     h1 { color: #333; }
     input { padding: 8px; width: 300px; }
     .result { border: 1px solid #ccc; padding: 10px; margin-top: 10px; border-radius: 5px; background: #f8f8f8; }
-    button { margin-right: 10px; padding: 5px 10px; cursor: pointer; }
+    button { margin: 5px 5px 0 0; padding: 5px 10px; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -46,9 +46,12 @@ fetch('./speedDialData.json')
                 New Target: ${item.newTarget || 'N/A'}<br><br>
                 <button class="copyAll">Copy All Data</button>
                 <button class="copyTransfer">Copy Transfer Number</button>
+                <button class="copySpeedDial">Copy to SpeedDial</button>
             `;
+            // Event listeners
             div.querySelector('.copyAll').addEventListener('click', () => copyData(item));
             div.querySelector('.copyTransfer').addEventListener('click', () => copyTransfer(item.transferSkillNumber));
+            div.querySelector('.copySpeedDial').addEventListener('click', () => setGenesysSpeedDial(item.transferSkillNumber));
             resultsContainer.appendChild(div);
         });
     });
@@ -57,20 +60,32 @@ fetch('./speedDialData.json')
       console.error('Error loading data:', err);
   });
 
+// Copies all fields to clipboard (silent)
 function copyData(data) {
-    const text = Object.entries(data).map(([k,v]) => `${k}: ${v}`).join('\n');
+    const text = Object.entries(data).map(([k,v]) => `${k}: ${v}`).join('\\n');
     navigator.clipboard.writeText(text).then(() => {
-        alert('All data copied to clipboard!');
+        console.log('All data copied to clipboard.');
     });
 }
 
+// Copies transfer number to clipboard (silent)
 function copyTransfer(value) {
     navigator.clipboard.writeText(value).then(() => {
-        alert('Transfer number copied to clipboard!');
+        console.log('Transfer number copied to clipboard:', value);
     });
     if (window.PURECLOUD && typeof PURECLOUD.setData === 'function') {
         PURECLOUD.setData({ FN_transferDestination: value });
-        console.log('Genesys variable FN_transferDestination set to:', value);
+        console.log('Genesys FN_transferDestination set to (via Copy Transfer):', value);
+    }
+}
+
+// Sets FN_transferDestination without affecting clipboard
+function setGenesysSpeedDial(value) {
+    if (window.PURECLOUD && typeof PURECLOUD.setData === 'function') {
+        PURECLOUD.setData({ FN_transferDestination: value });
+        console.log('Genesys FN_transferDestination set to (via Copy to SpeedDial):', value);
+    } else {
+        console.warn('PURECLOUD not available - not inside Genesys Script.');
     }
 }
 </script>

@@ -35,18 +35,17 @@ fetch('./speedDialData.json')
             const item = r.item;
             const div = document.createElement('div');
             div.className = 'result';
-            div.innerHTML = `
-                <strong>${item.name}</strong><br>
-                Agent Desktop: ${item.agentDesktop}<br>
-                Direction: ${item.direction}<br>
-                Type: ${item.type}<br>
-                Transfer Skill/Number: ${item.transferSkillNumber}<br>
-                Definition: ${item.definition}<br>
-                Current Target: ${item.currentTarget}<br>
-                New Target: ${item.newTarget || 'N/A'}<br><br>
-                <button onclick='copyData(${JSON.stringify(JSON.stringify(item))})'>Copy All Data</button>
-                <button onclick='copyTransfer("${item.transferSkillNumber}")'>Copy Transfer Number</button>
-            `;
+            div.innerHTML =
+                '<strong>' + item.name + '</strong><br>' +
+                'Agent Desktop: ' + item.agentDesktop + '<br>' +
+                'Direction: ' + item.direction + '<br>' +
+                'Type: ' + item.type + '<br>' +
+                'Transfer Skill/Number: ' + item.transferSkillNumber + '<br>' +
+                'Definition: ' + item.definition + '<br>' +
+                'Current Target: ' + item.currentTarget + '<br>' +
+                'New Target: ' + (item.newTarget || 'N/A') + '<br><br>' +
+                '<button onclick='copyData("' + JSON.stringify(item).replace(/"/g, '&quot;') + '")'>Copy All Data</button>' +
+                '<button onclick='copyTransfer("' + item.transferSkillNumber + '")'>Copy Transfer Number</button>';
             resultsContainer.appendChild(div);
         });
     });
@@ -57,16 +56,23 @@ fetch('./speedDialData.json')
 
 function copyData(dataStr) {
     const data = JSON.parse(dataStr);
-    const text = Object.entries(data).map(([k,v]) => `${k}: ${v}`).join('\\n');
+    const text = Object.entries(data).map(([k,v]) => k + ': ' + v).join('
+');
     navigator.clipboard.writeText(text).then(() => {
         alert('All data copied to clipboard!');
     });
 }
 
 function copyTransfer(value) {
+    // Copy to clipboard as normal
     navigator.clipboard.writeText(value).then(() => {
         alert('Transfer number copied to clipboard!');
     });
+    // Also set Genesys Cloud script variable if inside script environment
+    if (window.PURECLOUD && typeof PURECLOUD.setData === 'function') {
+        PURECLOUD.setData({ FN_transferDestination: value });
+        console.log('Genesys variable FN_transferDestination set to:', value);
+    }
 }
 </script>
 

@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Koodo Internet Videotron GSR",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "15143807782",
+    "definition": "phonenumber=5143807782",
+    "currentTarget": "DID (external)",
+    "newTarget": ""
+  },
+  {
+    "name": "Koodo Internet Videotron Help Desk",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "15143805489",
+    "definition": "phonenumber=5143805489",
+    "currentTarget": "DID (external)",
+    "newTarget": ""
+  },
+  {
+    "name": "Koodo CxSS Care Prepaid Activations EN",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_pre_channel_cr1_en",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "en"
+  },
+  {
+    "name": "Koodo CxSS Care Prepaid Activations FR",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_pre_channel_cr1_fr",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "fr"
+  },
+  {
+    "name": "Koodo CxSS Care Prepaid EN",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_pre_cr1_en",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "en"
+  },
+  {
+    "name": "Koodo CxSS Care Prepaid FR",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_pre_cr1_fr",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "fr"
+  },
+  {
+    "name": "Koodo CxSS Care Postpaid EN",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_post_cr1_en",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "en"
+  },
+  {
+    "name": "Koodo CxSS Care Postpaid FR",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_post_cr1_fr",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "fr"
+  },
+  {
+    "name": "Koodo CxSS Care Activations EN",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_post_cr1_en",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "en"
+  },
+  {
+    "name": "Koodo CxSS Care Activations FR",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_post_cr1_fr",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "fr"
+  },
+  {
+    "name": "Koodo CLS Loyalty Postpaid EN",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_post_cr2_en",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "en"
+  },
+  {
+    "name": "Koodo CLS Loyalty Postpaid FR",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_post_cr2_fr",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "fr"
+  },
+  {
+    "name": "Koodo Sales Callbacks FR",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_marketing_cr1_fr",
+    "definition": "\"SPEED_DIAL_INPUT=koodo",
+    "currentTarget": "wireless",
+    "newTarget": "fr"
+  },
+  {
+    "name": "Koodo CSS Callbacks EN",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "7805087954",
+    "definition": "7805087954",
+    "currentTarget": "DID (external)",
+    "newTarget": ""
+  },
+  {
+    "name": "Koodo Escalations Consumer EN",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_met_cs_en",
+    "definition": "\"koodo",
+    "currentTarget": "wireless",
+    "newTarget": "en"
+  },
+  {
+    "name": "Koodo Escalations Consumer FR",
+    "agentDesktop": "WWE",
+    "direction": "Outgoing",
+    "type": "Custom Contact",
+    "transferSkillNumber": "vq_kdo_ce_wls_met_cs_fr",
+    "definition": "\"koodo",
+    "currentTarget": "wireless",
+    "newTarget": "fr"
+  },
+  {
+    "name": "Koodo Internet Help Desk Care EN",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_hd_billing_en",
+    "definition": "915877569370",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_hd_billing_en"
+  },
+  {
+    "name": "Koodo Internet Help Desk Care FR",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_hd_billing_fr",
+    "definition": "913677773320",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_hd_billing_fr"
+  },
+  {
+    "name": "Koodo Internet Help Desk Tech Support EN",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_hd_tech_en",
+    "definition": "915877569371",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_hd_tech_en"
+  },
+  {
+    "name": "Koodo Internet Help Desk Tech Support FR",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_hd_tech_fr",
+    "definition": "913677773321",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_hd_tech_fr"
+  },
+  {
+    "name": "Koodo Internet Appointment Care EN",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_care_appt_en",
+    "definition": "915877569367",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_care_appt_en"
+  },
+  {
+    "name": "Koodo Internet Appointment Care FR",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_care_appt_fr",
+    "definition": "913677773317",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_care_appt_fr"
+  },
+  {
+    "name": "Koodo Internet Tech Support EN",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_ts_en",
+    "definition": "915877569368",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_ts_en"
+  },
+  {
+    "name": "Koodo Internet Tech Support FR",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_ts_fr",
+    "definition": "913677773318",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_ts_fr"
+  },
+  {
+    "name": "Koodo Internet Subscription Care EN",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_care_am_en",
+    "definition": "915877569369",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_care_am_en"
+  },
+  {
+    "name": "Koodo Internet Subscription Care FR",
+    "agentDesktop": "IWS / WWE",
+    "direction": "Incoming",
+    "type": "Custom Contact",
+    "transferSkillNumber": "sk_vq_kdo_con_wln_care_am_fr",
+    "definition": "913677773319",
+    "currentTarget": "GenX",
+    "newTarget": "acd_kdo_wln_hs_ki_care_am_fr"
+  }
+]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Genesys Speed Dial Search</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+<style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #333; }
+    input { padding: 8px; width: 300px; }
+    .result { border: 1px solid #ccc; padding: 10px; margin-top: 10px; border-radius: 5px; background: #f8f8f8; }
+    button { margin-right: 10px; padding: 5px 10px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h1>Genesys Speed Dial Search</h1>
+<input type="text" id="search" placeholder="Search for speed dial name...">
+
+<div id="results"></div>
+
+<script>
+fetch('speedDialData.json')
+  .then(response => response.json())
+  .then(speedDialData => {
+    const fuse = new Fuse(speedDialData, {
+        keys: ['name'],
+        threshold: 0.3
+    });
+
+    document.getElementById('search').addEventListener('input', function() {
+        const query = this.value;
+        const resultsContainer = document.getElementById('results');
+        resultsContainer.innerHTML = '';
+        if (!query) return;
+        const results = fuse.search(query);
+        results.forEach(r => {
+            const item = r.item;
+            const div = document.createElement('div');
+            div.className = 'result';
+            div.innerHTML = '<strong>' + item.name + '</strong><br>' +
+              'Agent Desktop: ' + item.agentDesktop + '<br>' +
+              'Direction: ' + item.direction + '<br>' +
+              'Type: ' + item.type + '<br>' +
+              'Transfer Skill/Number: ' + item.transferSkillNumber + '<br>' +
+              'Definition: ' + item.definition + '<br>' +
+              'Current Target: ' + item.currentTarget + '<br>' +
+              'New Target: ' + (item.newTarget || 'N/A') + '<br><br>' +
+              '<button onclick=\'copyData("' + JSON.stringify(item).replace(/"/g, '&quot;') + '")\'>Copy All Data</button>' +
+              '<button onclick=\'copyTransfer("' + item.transferSkillNumber + '")\'>Copy Transfer Number</button>';
+            resultsContainer.appendChild(div);
+        });
+    });
+  });
+
+function copyData(dataStr) {
+  const data = JSON.parse(dataStr);
+  const text = Object.entries(data).map(([k,v]) => k + ': ' + v).join('
+');
+  navigator.clipboard.writeText(text).then(() => { alert('All data copied to clipboard!'); });
+}
+function copyTransfer(value) {
+  navigator.clipboard.writeText(value).then(() => { alert('Transfer number copied to clipboard!'); });
+}
+</script>
+</body>
+</html>
